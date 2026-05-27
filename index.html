@@ -477,7 +477,7 @@
 <!-- FAB -->
 <button id="fab" aria-label="View coupon status">
   <span class="fab-icon">🎟</span>
-  <span class="fab-count" id="fab-count">0 / 20</span>
+  <span class="fab-count" id="fab-count">20 / 20</span>
 </button>
 
 <!-- Dashboard -->
@@ -800,7 +800,7 @@ function refreshAllStamps() {
 // ─────────────────────────────────────────────
 function updateFab() {
   const count = Object.keys(redemptions).length;
-  document.getElementById('fab-count').textContent = `${count} / 20`;
+  document.getElementById('fab-count').textContent = `${20 - count} / 20`;
 }
 
 document.getElementById('fab').addEventListener('click', () => {
