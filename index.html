@@ -693,7 +693,7 @@ function getCouponForPage(pageIndex) {
 }
 
 function getCouponIndexForPage(pageIndex) {
-  return COUPONS.findIndex(c => c.frontPage === pageIndex);
+  return COUPONS.findIndex(c => c.frontPage === pageIndex || c.backPage === pageIndex);
 }
 
 function isCouponFrontPage(pageIndex) {
