@@ -185,11 +185,12 @@
     width: 56px; height: 56px;
     border-radius: 50%;
     border: none; cursor: pointer;
-    display: none;
+    display: flex;
     flex-direction: column; align-items: center; justify-content: center;
     transition: all 0.2s ease;
     font-family: 'DM Sans', sans-serif;
   }
+  #redeem-btn.hidden { display: none !important; }
   #redeem-btn.available {
     background: linear-gradient(135deg, var(--rose-deep), var(--plum));
     box-shadow: 0 4px 20px rgba(201,79,120,0.55);
@@ -464,7 +465,7 @@
 
   <button class="nav-btn" id="btn-prev">&#8249;</button>
   <button class="nav-btn" id="btn-next">&#8250;</button>
-  <button id="redeem-btn"></button>
+  <button id="redeem-btn" class="hidden"></button>
 </div>
 
 <!-- FAB -->
@@ -701,11 +702,11 @@ function updateRedeemBtn() {
   const couponIdx = getCouponIndexForPage(currentPage);
 
   if (couponIdx === -1) {
-    btn.style.display = 'none';
+    btn.classList.add('hidden');
     return;
   }
 
-  btn.style.display = 'flex';
+  btn.classList.remove('hidden');
   const isRedeemed = !!redemptions[couponIdx];
   if (isRedeemed) {
     btn.className = 'redeemed';
