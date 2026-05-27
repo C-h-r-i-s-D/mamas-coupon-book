@@ -596,8 +596,7 @@ function buildPages() {
 
     const img = document.createElement('img');
     // zero-pad to 2 digits
-    const num = String(i + 1).padStart(2, '0');
-    img.src = `pages/page-${num}.jpg`;
+    img.src = `pages/${i + 1}.png`;
     img.alt = `Page ${i + 1}`;
     img.loading = i === 0 ? 'eager' : 'lazy';
     img.draggable = false;
