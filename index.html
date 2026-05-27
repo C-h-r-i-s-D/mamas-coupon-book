@@ -705,14 +705,14 @@ function updateRedeemBtn() {
     return;
   }
 
-  btn.style.display = '';
+  btn.style.display = 'flex';
   const isRedeemed = !!redemptions[couponIdx];
   if (isRedeemed) {
     btn.className = 'redeemed';
-    btn.textContent = '✓ Redeemed — tap to undo';
+    btn.innerHTML = '<span style="font-size:18px">↩</span><span style="font-size:9px;color:rgba(255,255,255,0.7);margin-top:2px">Undo</span>';
   } else {
     btn.className = 'available';
-    btn.textContent = '🎟 Mark as Redeemed';
+    btn.innerHTML = '<span style="font-size:18px">🎟</span><span style="font-size:9px;color:rgba(255,255,255,0.85);margin-top:2px">Redeem</span>';
   }
 }
 
